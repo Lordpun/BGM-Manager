@@ -16,7 +16,7 @@ function GroupEdit({ groupData, closePopup }) {
   <section className="position-fixed top-50 start-50 translate-middle bg-white z-2 py-3 px-5 rounded" style={{height: "80vh", width: "80vw"}}>
     <h1 className="border-bottom border-2">Edit Group</h1>
 
-    <section className="mt-4 d-flex flex-column" style={{ minHeight: 'calc(100% - 4rem)' }}>
+    <section className="mt-4 d-flex flex-column" style={{ height: 'calc(100% - 4rem)' }}>
       <form className="flex-grow-1 overflow-scroll">
         <div>
           <label>Group Name</label>
