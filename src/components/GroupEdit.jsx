@@ -31,7 +31,7 @@ function GroupEdit({ groupData, closePopup }) {
 
         <div className="mt-3">
           <input className="me-2" name="changeKvantum" type="checkBox"/>
-          <label>Change Kvantum Color - <span className="text-danger fw-bold">Hardcoded for Glassy theme</span></label>
+          <label>Change Kvantum Color - <span className="text-danger fw-bold">Requires Kvantum and Glassy theme</span></label>
         </div>
 
         <div className="mt-3">
