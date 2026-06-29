@@ -1,4 +1,5 @@
 import { useState } from "react";
+import BackgroundList from "./BackgroundList";
 
 function GroupEdit({ groupData, closePopup }) {
   const [backgroundsOpen, openBackgrounds] = useState(true);
@@ -56,7 +57,7 @@ function GroupEdit({ groupData, closePopup }) {
           </div>
         </div>
 
-        <a className="btn btn-info mt-3 text-white fw-bold">Manage Backgrounds</a>
+        <a className="btn btn-info mt-3 text-white fw-bold" onClick={() => { openBackgrounds(true);}}>Manage Backgrounds</a>
       </form>
 
       <section className="mt-auto text-end">
@@ -65,6 +66,8 @@ function GroupEdit({ groupData, closePopup }) {
       </section>
     </section>
   </section>
+
+  { backgroundsOpen && <BackgroundList close={() => {openBackgrounds(false)}}/> }
   </>);
 }
 
