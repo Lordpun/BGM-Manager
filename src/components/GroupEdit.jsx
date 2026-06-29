@@ -1,4 +1,9 @@
+import { useState } from "react";
+
 function GroupEdit({ groupData, closePopup }) {
+  const [backgroundsOpen, openBackgrounds] = useState(true);
+  const [backgroundsData, setBackgrounds] = useState(null);
+
   const closeWithoutSave = async () => {
     let response = confirm("Close without saving?");
     if (response) {
@@ -44,12 +49,19 @@ function GroupEdit({ groupData, closePopup }) {
             <input className="me-2" name="textColor" type="radio" value="dark"/>
             <label>Dark</label>
           </div>
+          <div>
+            <input className="me-2" name="textColor" type="radio" value="dark"/>
+            <label>Custom</label>
+            <input className="ms-2 text-center" type="text" placeholder="#000000" style={{width: "6rem"}}/>
+          </div>
         </div>
+
+        <a className="btn btn-info mt-3 text-white fw-bold">Manage Backgrounds</a>
       </form>
 
       <section className="mt-auto text-end">
-        <a className="btn btn-warning me-2" onClick={closeWithoutSave}>Close</a>
-        <a className="btn btn-info">Save</a>
+        <a className="btn btn-warning me-2 text-white fw-bold" onClick={closeWithoutSave}>Close</a>
+        <a className="btn btn-info text-white fw-bold">Save</a>
       </section>
     </section>
   </section>
