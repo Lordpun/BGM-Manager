@@ -2,7 +2,7 @@ import { useState } from "react";
 import BackgroundList from "./BackgroundList";
 
 function GroupEdit({ groupData, closePopup }) {
-  const [backgroundsOpen, openBackgrounds] = useState(true);
+  const [backgroundsOpen, openBackgrounds] = useState(false);
   const [backgroundsData, setBackgrounds] = useState(null);
 
   const closeWithoutSave = async () => {
