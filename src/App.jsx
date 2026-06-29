@@ -1,3 +1,4 @@
+import { callFunction } from 'tauri-plugin-python-api'
 import { useState } from "react";
 import GroupEdit from "./components/GroupEdit";
 
@@ -7,8 +8,13 @@ function App() {
 
   const openEdit = async () => {
     setPopup(true);
-
   }
+
+  const loadData = async () => {
+    setData(await callFunction("sortCustomCommands"));
+  }
+
+  loadData();
 
   return (<>
     <header className="text-center border-2 border-bottom pt-3">

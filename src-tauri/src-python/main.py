@@ -1,4 +1,4 @@
-_tauri_plugin_functions = ["makeConfig"]
+_tauri_plugin_functions = ["sortCustomCommands"]
 
 from pathlib import Path
 import json
@@ -19,3 +19,14 @@ def getConfig():
 def writeConfig(data):
   with open(configPath) as file:
     json.dump(data, file)
+
+# For getting only commands in the config with custom type
+def sortCustomCommands():
+  data = getConfig()
+
+  sortedData = {}
+  for i in [list(data.keys())]:
+    if data[i].get("type") == "custom":
+      sortedData[i] = data[i]
+
+  return sortedData
